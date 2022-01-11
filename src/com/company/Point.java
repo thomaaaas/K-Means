@@ -5,6 +5,7 @@ import static java.lang.Math.*;
 public class Point {
     private double _x;
     private double _y;
+    private Point _centroid;
 
     public Point(double x, double y) {
         this._x = x;
@@ -27,6 +28,10 @@ public class Point {
         this._y = y;
     }
 
+    public void set_centroid(Point _centroid) {
+        this._centroid = _centroid;
+    }
+
     public double distance(Point p) {
         return sqrt(pow(p.get_x() - this._x, 2) + pow(p.get_y() - _y, 2));
     }
@@ -36,6 +41,7 @@ public class Point {
         return "Point{" +
                 "_x=" + _x +
                 ", _y=" + _y +
+                ", _centroid=" + _centroid +
                 '}';
     }
 }
