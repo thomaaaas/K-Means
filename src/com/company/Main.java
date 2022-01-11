@@ -11,12 +11,20 @@ public class Main {
         centroids.add(new Point(12.0,10.0));
         centroids.add(new Point(25.0,36.0));
 
-        for (Point point : points) {
-            KMeansMapper.map(centroids, point);
+        for(int i = 0; i < 3; i++){
+            for (Point point : points) {
+                KMeansMapper.map(centroids, point);
+            }
+
+            for (Point point : points) {
+                System.out.println(point);
+            }
+
+            centroids = KMeansReducer.reduce(centroids, points);
+
+            System.out.println("-------------------");
         }
 
-        for (Point point : points) {
-            System.out.println(point);
-        }
+
     }
 }

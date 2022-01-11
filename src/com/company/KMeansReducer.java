@@ -4,19 +4,24 @@ import java.util.ArrayList;
 
 public class KMeansReducer {
 
-    public static ArrayList<Point> reduce(ArrayList<ArrayList<Point>> points){
-        ArrayList<Point> centroids = new ArrayList();
-        for (ArrayList<Point> point : points) {
-            double somme_x;
-            double somme_y;
-            for (Point p : point){
-                somme_x = point.get_x();
-                somme_y = point.get_y();
+    public static ArrayList<Point> reduce(ArrayList<Point> centroids, ArrayList<Point> points) {
+        ArrayList<Point> newCentroids = new ArrayList();
+
+        for (Point centroid : centroids) {
+            double somme_x = 0.0;
+            double somme_y = 0.0;
+            int nbPoints = 0;
+            for (Point point : points) {
+                if (centroid.equals(point.get_centroid())) {
+                    somme_x += point.get_x();
+                    somme_y += point.get_y();
+                    nbPoints++;
+                }
             }
-            somme_x /= points.size();
-            somme_y /= points.size();
-            centroids.add(new Point(somme_x, somme_y));
+            somme_x /= nbPoints;
+            somme_y /= nbPoints;
+            newCentroids.add(new Point(somme_x, somme_y));
         }
-        return centroids;
+        return newCentroids;
     }
 }
