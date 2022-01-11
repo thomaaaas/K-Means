@@ -27,7 +27,15 @@ public class Point {
         this._y = y;
     }
 
-    public double distance(Point p){
-        return sqrt(pow(p.get_x()-this._x,2)+pow(p.get_y()-_y,2));
+    public double distance(Point p) {
+        return sqrt(pow(p.get_x() - this._x, 2) + pow(p.get_y() - _y, 2));
+    }
+
+    @Override
+    public String toString() {
+        return "Point{" +
+                "_x=" + _x +
+                ", _y=" + _y +
+                '}';
     }
 }
