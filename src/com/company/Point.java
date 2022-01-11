@@ -28,8 +28,8 @@ public class Point {
         this._y = y;
     }
 
-    public void set_centroid(Point _centroid) {
-        this._centroid = _centroid;
+    public void set_centroid(Point centroid) {
+        this._centroid = centroid;
     }
 
     public double distance(Point p) {
@@ -38,10 +38,10 @@ public class Point {
 
     @Override
     public String toString() {
-        return "Point{" +
-                "_x=" + _x +
-                ", _y=" + _y +
-                ", _centroid=" + _centroid +
-                '}';
+        if (_centroid != null) {
+            return "Point{" + "_x=" + _x + ", _y=" + _y + ", _centroid=" + _centroid + '}';
+        } else {
+            return "Point{" + "_x=" + _x + ", _y=" + _y + '}';
+        }
     }
 }
