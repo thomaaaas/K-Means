@@ -4,15 +4,16 @@ import java.util.Scanner;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
-public class ReadFile {
+public class DataPoint {
 
     public static ArrayList<Point> ArrayFromRandom(int nb){
         ArrayList<Point> pointArray = new ArrayList();
         Random r = new Random();
         for(int i = 0; i < nb; i++){
-            double x = 0 + (70 - 0) * r.nextDouble();
-            double y = 0 + (70 - 0) * r.nextDouble();
+            double x = ThreadLocalRandom.current().nextDouble(0, 70 + 1);
+            double y = ThreadLocalRandom.current().nextDouble(0, 70 + 1);
             pointArray.add(new Point(x, y));
         }
         return pointArray;
