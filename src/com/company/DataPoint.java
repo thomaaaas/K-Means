@@ -1,9 +1,9 @@
 package com.company;
 
-import java.util.Scanner;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class DataPoint {
