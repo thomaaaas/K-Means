@@ -6,7 +6,6 @@ public class KMeansReducer {
 
     public static ArrayList<Point> reduce(ArrayList<Point> centroids, ArrayList<Point> points) {
         ArrayList<Point> newCentroids = new ArrayList();
-
         for (Point centroid : centroids) {
             double somme_x = 0.0;
             double somme_y = 0.0;
