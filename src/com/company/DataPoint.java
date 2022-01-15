@@ -10,7 +10,6 @@ public class DataPoint {
 
     public static ArrayList<Point> ArrayFromRandom(int nb){
         ArrayList<Point> pointArray = new ArrayList();
-        Random r = new Random();
         for(int i = 0; i < nb; i++){
             double x = ThreadLocalRandom.current().nextDouble(0, 70 + 1);
             double y = ThreadLocalRandom.current().nextDouble(0, 70 + 1);
@@ -21,9 +20,8 @@ public class DataPoint {
 
     public static ArrayList<Point> ArrayFromFile(String fileName) {
         ArrayList<Point> pointArray = new ArrayList();
-        try {
-            File file = new File(fileName);
-            Scanner sc = new Scanner(file);
+        File file = new File(fileName);
+        try(Scanner sc = new Scanner(file)) {
             while (sc.hasNextLine()) {
                 double x = sc.nextDouble();
                 double y = sc.nextDouble();

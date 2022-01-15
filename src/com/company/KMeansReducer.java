@@ -17,9 +17,11 @@ public class KMeansReducer {
                     nbPoints++;
                 }
             }
-            somme_x /= nbPoints;
-            somme_y /= nbPoints;
-            newCentroids.add(new Point(somme_x, somme_y));
+            if(nbPoints > 0){
+                somme_x /= nbPoints;
+                somme_y /= nbPoints;
+                newCentroids.add(new Point(somme_x, somme_y));
+            }
         }
         return newCentroids;
     }

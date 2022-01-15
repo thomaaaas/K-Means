@@ -13,8 +13,8 @@ public class Main extends JPanel {
         Graphics2D g2d = (Graphics2D) g;
         //ArrayList<Point> points = DataPoint.ArrayFromFile("C:\\Users\\norma\\IdeaProjects\\K-Means\\src\\com\\company\\Point.txt");
 
-        ArrayList<Point> points = DataPoint.ArrayFromRandom(4000);
-        ArrayList<Point> centroids = DataPoint.ArrayFromRandom(10);
+        ArrayList<Point> points = DataPoint.ArrayFromRandom(2000);
+        ArrayList<Point> centroids = DataPoint.ArrayFromRandom(3);
 
         for (int i = 0; i < 500; i++) {
             for (Point point : points) {
