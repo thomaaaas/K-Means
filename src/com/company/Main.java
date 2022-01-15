@@ -8,6 +8,7 @@ import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Main extends JPanel {
+    private static Random ra;
 
     public void paint(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
@@ -34,7 +35,7 @@ public class Main extends JPanel {
     }
 
     public static Color color() {
-        Random ra = new Random();
+        ra = new Random();
         int r = ThreadLocalRandom.current().nextInt(0, 255 + 1);
         int g = ThreadLocalRandom.current().nextInt(0, 255 + 1);
         int b = ThreadLocalRandom.current().nextInt(0, 255 + 1);
