@@ -11,8 +11,8 @@ public class DataPoint {
     public static ArrayList<Point> ArrayFromRandom(int nb){
         ArrayList<Point> pointArray = new ArrayList();
         for(int i = 0; i < nb; i++){
-            double x = ThreadLocalRandom.current().nextDouble(0, 70 + 1);
-            double y = ThreadLocalRandom.current().nextDouble(0, 70 + 1);
+            double x = ThreadLocalRandom.current().nextDouble(0, 70.0 + 1.0);
+            double y = ThreadLocalRandom.current().nextDouble(0, 70.0 + 1.0);
             pointArray.add(new Point(x, y));
         }
         return pointArray;
